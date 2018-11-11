@@ -9,7 +9,7 @@ SELECT first_name, last_name
 FROM actor;
 
 -- 1b. Display the first and last name of each actor in a single column in upper case letters. 
--- 	     Name the column `Actor Name`
+--     Name the column `Actor Name`
 SELECT CONCAT(first_name,  ' ', last_name) AS 'First Last' FROM actor;
 
 -- 2a. You need to find the ID number, first name, and last name of an actor, of whom you know only the first name, 
@@ -40,7 +40,7 @@ ALTER TABLE actor
 ADD COLUMN actor_description BLOB AFTER last_name;
 
 -- 3b. Very quickly you realize that entering descriptions for each actor is too much effort. 
---       Delete the `description` column.
+--     Delete the `description` column.
 ALTER TABLE actor
 DROP COLUMN actor_description;
 
@@ -48,7 +48,7 @@ DROP COLUMN actor_description;
 SELECT last_name, COUNT(*) AS `Count` FROM actor GROUP BY last_name;
 
 -- 4b. List last names of actors and the number of actors who have that last name, 
---       but only for names that are shared by at least two actors
+--     but only for names that are shared by at least two actors
 SELECT last_name, COUNT(*) AS `Count` FROM actor 
 GROUP BY last_name
 HAVING Count > 2;
